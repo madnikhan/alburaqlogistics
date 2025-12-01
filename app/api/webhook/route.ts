@@ -28,6 +28,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const stripe = getStripe();
+  const webhookSecret = getWebhookSecret();
+
+  if (!stripe || !webhookSecret) {
+    return NextResponse.json(
+      { error: 'Stripe webhook is not configured' },
+      { status: 503 }
+    );
+  }
+
   let event: Stripe.Event;
 
   try {

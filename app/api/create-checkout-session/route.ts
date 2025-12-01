@@ -1,26 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2025-11-17.clover',
-});
+// Initialize Stripe only if API key is available
+const getStripe = () => {
+  const secretKey = process.env.STRIPE_SECRET_KEY;
+  if (!secretKey || secretKey === 'your_stripe_secret_key') {
+    return null;
+  }
+  return new Stripe(secretKey, {
+    apiVersion: '2025-11-17.clover',
+  });
+};
 
 export async function POST(request: NextRequest) {
   try {
-    // Check if Stripe is configured
-    if (!process.env.STRIPE_SECRET_KEY || process.env.STRIPE_SECRET_KEY === 'your_stripe_secret_key') {
-      return NextResponse.json(
-        { error: 'Stripe is not configured. Please add your Stripe secret key to environment variables.' },
-        { status: 500 }
-      );
-    }
-
     const { bookingId, amount, customerEmail } = await request.json();
 
     if (!bookingId || !amount || !customerEmail) {
       return NextResponse.json(
         { error: 'Missing required parameters' },
         { status: 400 }
+      );
+    }
+
+    // Check if Stripe is configured
+    const stripe = getStripe();
+    if (!stripe) {
+      return NextResponse.json(
+        { error: 'Stripe is not configured. Please use demo payment instead.' },
+        { status: 503 }
       );
     }
 
