@@ -1,0 +1,82 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║           QUICK START: Deploy to Fasthosts (5 Steps)                       ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📖 For detailed instructions, see: BEGINNER_DEPLOY_GUIDE.md
+
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 1: BUILD ON YOUR COMPUTER
+────────────────────────────────
+Open Terminal and run:
+
+  cd /Users/muhammadmadni/alburaqlogistics
+  npm run build
+  npm run deploy:prepare
+
+✅ Creates 'deploy/' folder with all files ready
+
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 2: CONNECT TO SERVER
+──────────────────────────
+Open NEW Terminal and run:
+
+  ssh yourusername@ssh.alburaqlogistics.co.uk
+
+Enter your password when prompted.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 3: UPLOAD FILES
+─────────────────────
+On your LOCAL computer (new terminal):
+
+  cd /Users/muhammadmadni/alburaqlogistics
+  scp -r deploy/* yourusername@ssh.alburaqlogistics.co.uk:~/public_html/
+
+Or use FileZilla FTP client (easier for beginners).
+
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 4: SETUP ON SERVER
+────────────────────────
+Back on SERVER terminal:
+
+  cd ~/public_html
+  npm install --production
+  nano .env.local
+
+Paste your environment variables (see VERCEL_ENV_TEMPLATE.txt)
+Save: Ctrl+X, then Y, then Enter
+
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP 5: START WEBSITE
+─────────────────────
+On SERVER:
+
+  npm install -g pm2
+  pm2 start npm --name "alburaq-logistics" -- start
+  pm2 save
+  pm2 startup
+
+✅ Website is now running!
+
+Visit: https://alburaqlogistics.co.uk
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 TROUBLESHOOTING
+──────────────────
+
+Website not loading?
+  pm2 status          # Check if running
+  pm2 logs alburaq-logistics  # See errors
+  pm2 restart alburaq-logistics  # Restart
+
+Need help?
+  See: BEGINNER_DEPLOY_GUIDE.md for detailed step-by-step instructions
+
+═══════════════════════════════════════════════════════════════════════════════
+
