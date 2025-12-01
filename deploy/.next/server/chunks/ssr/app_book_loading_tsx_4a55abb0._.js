@@ -1,0 +1,3 @@
+module.exports=[77230,a=>{"use strict";var b=a.i(7997);function c(){return(0,b.jsx)("div",{className:"container mx-auto px-4 py-12 max-w-4xl",children:(0,b.jsxs)("div",{className:"animate-pulse",children:[(0,b.jsx)("div",{className:"h-10 bg-gray-200 rounded w-1/2 mx-auto mb-8"}),(0,b.jsxs)("div",{className:"space-y-6",children:[(0,b.jsx)("div",{className:"h-64 bg-gray-200 rounded"}),(0,b.jsx)("div",{className:"h-12 bg-gray-200 rounded"}),(0,b.jsx)("div",{className:"h-12 bg-gray-200 rounded"})]})]})})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=app_book_loading_tsx_4a55abb0._.js.map

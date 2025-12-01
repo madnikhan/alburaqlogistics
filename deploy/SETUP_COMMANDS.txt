@@ -1,0 +1,99 @@
+================================================================================
+  QUICK SETUP COMMANDS FOR YOUR SERVER
+================================================================================
+
+YOUR SERVER DETAILS:
+--------------------
+Host: ssh.alburaqlogistics.co.uk
+IP: 77.68.64.22
+Port: 22
+
+================================================================================
+  COPY AND PASTE THESE COMMANDS ON YOUR SERVER
+================================================================================
+
+STEP 1: CONNECT TO SERVER
+--------------------------
+ssh username@ssh.alburaqlogistics.co.uk
+# (Replace 'username' with your Fasthosts username)
+
+STEP 2: FIND YOUR WEBSITE DIRECTORY
+------------------------------------
+# Try these common locations:
+cd ~/public_html
+# OR
+cd ~/www
+# OR
+cd /var/www/html
+
+# Check if files are there:
+ls -la
+# Should see: package.json, .next/, public/
+
+STEP 3: INSTALL DEPENDENCIES (CRITICAL!)
+-----------------------------------------
+npm install --production
+
+# Wait for completion (2-5 minutes)
+
+STEP 4: CREATE ENVIRONMENT FILE
+--------------------------------
+cp .env.example .env.local
+nano .env.local
+
+# Add your Firebase and other variables
+# Save: Ctrl+X, then Y, then Enter
+
+STEP 5: CHECK NODE.JS VERSION
+------------------------------
+node --version
+# Must be v18 or higher
+
+STEP 6: START APPLICATION
+--------------------------
+# Option 1: Test start
+npm start
+
+# Option 2: Production with PM2 (recommended)
+npm install -g pm2
+pm2 start npm --name "alburaq-logistics" -- start
+pm2 save
+pm2 startup
+
+STEP 7: CHECK STATUS
+---------------------
+pm2 status
+pm2 logs alburaq-logistics
+
+================================================================================
+  TROUBLESHOOTING
+================================================================================
+
+If "npm: command not found":
+  → Contact Fasthosts support to install Node.js 18+
+
+If "Cannot find module":
+  → Run: npm install --production
+
+If port 3000 is in use:
+  → Add to .env.local: PORT=3001
+
+If app starts but website doesn't load:
+  → Check domain DNS points to 77.68.64.22
+  → Check reverse proxy configuration
+  → Contact Fasthosts support
+
+================================================================================
+  TEST YOUR SETUP
+================================================================================
+
+# Test locally on server:
+curl http://localhost:3000
+
+# Should return HTML content
+
+# Test via domain:
+# Visit: https://alburaqlogistics.co.uk
+
+================================================================================
+

@@ -1,0 +1,3 @@
+module.exports=[66188,a=>{"use strict";var b=a.i(7997),c=a.i(95936);function d(){return(0,b.jsxs)("div",{className:"container mx-auto px-4 py-20 text-center",children:[(0,b.jsx)("h1",{className:"text-6xl font-bold text-gray-900 mb-4",children:"404"}),(0,b.jsx)("h2",{className:"text-3xl font-semibold text-gray-700 mb-4",children:"Page Not Found"}),(0,b.jsx)("p",{className:"text-lg text-gray-600 mb-8",children:"The page you're looking for doesn't exist."}),(0,b.jsx)(c.default,{href:"/",className:"bg-[#092439] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0d3552] transition inline-block",children:"Return Home"})]})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=app_not-found_tsx_ef35050a._.js.map

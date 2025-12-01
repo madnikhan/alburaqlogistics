@@ -1,0 +1,74 @@
+================================================================================
+  FILES TO UPLOAD TO FASTHOSTS
+================================================================================
+
+UPLOAD ALL OF THESE FILES AND FOLDERS:
+======================================
+
+📁 FOLDERS:
+-----------
+✅ .next/              → Built Next.js application (CRITICAL)
+✅ public/             → Static assets (images, icons, etc.)
+
+📄 FILES:
+----------
+✅ package.json        → Dependencies configuration
+✅ package-lock.json   → Locked dependency versions
+✅ next.config.ts      → Next.js configuration
+✅ tsconfig.json       → TypeScript configuration
+✅ server.js           → Custom server (for Node.js hosting)
+✅ ecosystem.config.js → PM2 process manager config
+✅ .htaccess           → Apache configuration (for shared hosting)
+✅ .env.example        → Environment variables template (reference only)
+
+📋 DOCUMENTATION (Optional but helpful):
+----------------------------------------
+✅ README.txt          → Quick deployment instructions
+✅ UPLOAD_INSTRUCTIONS.txt → Detailed upload guide
+✅ FILES_TO_UPLOAD.txt → This file
+
+================================================================================
+  WHAT NOT TO UPLOAD
+================================================================================
+
+❌ node_modules/       → Install on server with: npm install --production
+❌ .env.local          → Create on server (NEVER upload via FTP!)
+❌ .git/               → Version control (not needed on server)
+❌ .next/cache/        → Build cache (can be regenerated)
+❌ Development files   → *.md files (except README)
+
+================================================================================
+  UPLOAD METHODS
+================================================================================
+
+METHOD 1: FTP/SFTP (FileZilla, WinSCP, etc.)
+---------------------------------------------
+1. Connect to your Fasthosts FTP server
+2. Navigate to your domain root (public_html or www)
+3. Upload all files and folders listed above
+
+METHOD 2: SSH/SCP
+------------------
+scp -r * username@your-server:/path/to/your/domain/
+
+METHOD 3: cPanel File Manager
+-------------------------------
+1. Login to cPanel
+2. Open File Manager
+3. Navigate to public_html
+4. Upload files via web interface
+
+================================================================================
+  AFTER UPLOAD - SERVER SETUP
+================================================================================
+
+1. SSH into your server
+2. cd /path/to/your/website
+3. npm install --production
+4. Create .env.local file with your environment variables
+5. npm start (or use PM2)
+
+See UPLOAD_INSTRUCTIONS.txt for detailed steps.
+
+================================================================================
+

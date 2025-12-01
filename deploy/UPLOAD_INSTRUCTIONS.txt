@@ -1,0 +1,122 @@
+================================================================================
+  AL BURAQ LOGISTICS - FASTHOSTS UPLOAD INSTRUCTIONS
+================================================================================
+
+📦 WHAT TO UPLOAD:
+------------------
+Upload ALL files and folders in this directory to your Fasthosts server.
+
+📁 FILES TO UPLOAD:
+-------------------
+✅ .next/          - Built Next.js application (REQUIRED)
+✅ public/         - Static assets (images, icons) (REQUIRED)
+✅ package.json    - Dependencies list (REQUIRED)
+✅ package-lock.json - Locked dependencies (REQUIRED)
+✅ next.config.ts  - Next.js configuration (REQUIRED)
+✅ tsconfig.json   - TypeScript configuration (REQUIRED)
+✅ server.js       - Custom server (if using Node.js hosting)
+✅ ecosystem.config.js - PM2 configuration (optional but recommended)
+✅ .htaccess       - Apache config (if using shared hosting/static export)
+✅ .env.example    - Environment variables template (for reference)
+
+❌ DO NOT UPLOAD:
+-----------------
+❌ node_modules/   - Install on server instead
+❌ .env.local       - Create on server (NEVER upload via FTP!)
+❌ .git/           - Not needed on server
+❌ Development files (*.md except README)
+
+================================================================================
+  STEP-BY-STEP DEPLOYMENT
+================================================================================
+
+STEP 1: UPLOAD FILES
+---------------------
+1. Connect to Fasthosts FTP/SFTP server
+2. Navigate to your domain's root directory (usually public_html or www)
+3. Upload ALL contents of this folder
+
+STEP 2: SERVER SETUP (SSH into your server)
+--------------------------------------------
+cd /path/to/your/website
+
+# Install dependencies
+npm install --production
+
+# Create environment file
+nano .env.local
+# (Copy from .env.example and fill in your values)
+# Save: Ctrl+X, then Y, then Enter
+
+STEP 3: START APPLICATION
+---------------------------
+# Option 1: Direct start (for testing)
+npm start
+
+# Option 2: PM2 (recommended for production)
+npm install -g pm2
+pm2 start npm --name "alburaq-logistics" -- start
+pm2 save
+pm2 startup
+
+STEP 4: CONFIGURE DOMAIN
+--------------------------
+- Point your domain to this server
+- Set up SSL certificate (HTTPS)
+- Test: https://yourdomain.co.uk
+
+================================================================================
+  ENVIRONMENT VARIABLES REQUIRED
+================================================================================
+
+Create .env.local on your server with these variables:
+
+# Firebase (REQUIRED)
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+
+# Application (REQUIRED)
+NEXT_PUBLIC_BASE_URL=https://yourdomain.co.uk
+NEXT_PUBLIC_ADMIN_PASSWORD=your_secure_password
+
+# Stripe (Optional - for real payments)
+STRIPE_SECRET_KEY=your_stripe_secret_key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+STRIPE_WEBHOOK_SECRET=your_webhook_secret
+
+# Optional APIs
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_key
+NEXT_PUBLIC_OPENROUTE_API_KEY=your_key
+
+================================================================================
+  TROUBLESHOOTING
+================================================================================
+
+❌ App won't start?
+   → Check Node.js version: node --version (needs 18+)
+   → Check environment variables are set
+   → Check logs: pm2 logs alburaq-logistics
+
+❌ 404 errors?
+   → Verify NEXT_PUBLIC_BASE_URL is set correctly
+   → Check domain is pointing to server
+
+❌ Firebase errors?
+   → Verify all Firebase env variables
+   → Check Firebase console for domain restrictions
+
+================================================================================
+  NEED MORE HELP?
+================================================================================
+
+📖 See FASTHOSTS_DEPLOY.md for detailed instructions
+📋 See DEPLOYMENT_CHECKLIST.md for step-by-step checklist
+🚀 See QUICK_START_DEPLOY.md for fastest deployment
+
+================================================================================
+

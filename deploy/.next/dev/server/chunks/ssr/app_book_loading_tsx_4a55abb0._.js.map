@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/muhammadmadni/alburaqlogistics/app/book/loading.tsx"],"sourcesContent":["export default function Loading() {\n  return (\n    <div className=\"container mx-auto px-4 py-12 max-w-4xl\">\n      <div className=\"animate-pulse\">\n        <div className=\"h-10 bg-gray-200 rounded w-1/2 mx-auto mb-8\"></div>\n        <div className=\"space-y-6\">\n          <div className=\"h-64 bg-gray-200 rounded\"></div>\n          <div className=\"h-12 bg-gray-200 rounded\"></div>\n          <div className=\"h-12 bg-gray-200 rounded\"></div>\n        </div>\n      </div>\n    </div>\n  );\n}\n\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAI,WAAU;;8BACb,8OAAC;oBAAI,WAAU;;;;;;8BACf,8OAAC;oBAAI,WAAU;;sCACb,8OAAC;4BAAI,WAAU;;;;;;sCACf,8OAAC;4BAAI,WAAU;;;;;;sCACf,8OAAC;4BAAI,WAAU;;;;;;;;;;;;;;;;;;;;;;;AAKzB"}}]
+}

@@ -1,0 +1,36 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    AL BURAQ LOGISTICS                                      ║
+║                    FASTHOSTS DEPLOYMENT PACKAGE                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📦 READY TO UPLOAD TO FASTHOSTS
+================================
+
+This folder contains all files needed to deploy your website to Fasthosts.
+
+🚀 QUICK START:
+---------------
+1. Upload ALL files in this folder to your Fasthosts server
+2. See UPLOAD_INSTRUCTIONS.txt for detailed steps
+3. See CHECKLIST.txt for step-by-step checklist
+
+📋 IMPORTANT FILES:
+-------------------
+✅ UPLOAD_INSTRUCTIONS.txt  → Complete upload guide
+✅ FILES_TO_UPLOAD.txt       → List of files to upload
+✅ CHECKLIST.txt             → Step-by-step checklist
+✅ README.txt                → Quick instructions
+✅ .env.example              → Environment variables template
+
+⚠️  CRITICAL REMINDERS:
+-----------------------
+❌ DO NOT upload .env.local via FTP (create on server)
+❌ DO NOT upload node_modules (install on server)
+✅ DO upload ALL other files and folders
+✅ DO create .env.local on server with your variables
+
+📖 FOR MORE HELP:
+-----------------
+See FASTHOSTS_DEPLOY.md in the main project folder for complete guide.
+
+═══════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,4 @@
+1:"$Sreact.fragment"
+2:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+3:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+0:{"buildId":"h8kkFOE_pcjp8cJLMVd4K","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":[["$","div","l",{"className":"container mx-auto px-4 py-12 max-w-4xl","children":["$","div",null,{"className":"animate-pulse","children":[["$","div",null,{"className":"h-10 bg-gray-200 rounded w-1/2 mx-auto mb-8"}],["$","div",null,{"className":"space-y-6","children":[["$","div",null,{"className":"h-64 bg-gray-200 rounded"}],["$","div",null,{"className":"h-12 bg-gray-200 rounded"}],["$","div",null,{"className":"h-12 bg-gray-200 rounded"}]]}]]}]}],[],[]],"isPartial":false}

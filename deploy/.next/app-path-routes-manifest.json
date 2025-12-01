@@ -1,0 +1,22 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/admin/page": "/admin",
+  "/api/calculate-distance/route": "/api/calculate-distance",
+  "/api/create-checkout-session/route": "/api/create-checkout-session",
+  "/api/demo-payment/route": "/api/demo-payment",
+  "/api/webhook/route": "/api/webhook",
+  "/book/page": "/book",
+  "/booking-success/page": "/booking-success",
+  "/contact/page": "/contact",
+  "/demo-payment/page": "/demo-payment",
+  "/faq/page": "/faq",
+  "/favicon.ico/route": "/favicon.ico",
+  "/my-bookings/page": "/my-bookings",
+  "/page": "/",
+  "/privacy/page": "/privacy",
+  "/services/[slug]/page": "/services/[slug]",
+  "/services/page": "/services",
+  "/terms/page": "/terms"
+}

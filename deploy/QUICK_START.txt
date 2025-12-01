@@ -1,0 +1,34 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    QUICK START - YOUR SERVER                               ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+SERVER: ssh.alburaqlogistics.co.uk (77.68.64.22)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+1. CONNECT:
+   ssh username@ssh.alburaqlogistics.co.uk
+
+2. GO TO WEBSITE:
+   cd ~/public_html
+   # (or wherever your files are)
+
+3. INSTALL DEPENDENCIES:
+   npm install --production
+
+4. CREATE ENV FILE:
+   cp .env.example .env.local
+   nano .env.local
+   # (Add your Firebase keys, save: Ctrl+X, Y, Enter)
+
+5. START APP:
+   npm start
+   # OR use PM2:
+   pm2 start npm --name "alburaq-logistics" -- start
+
+═══════════════════════════════════════════════════════════════════════════════
+
+See SETUP_COMMANDS.txt for detailed commands
+See YOUR_SERVER_SETUP.md for complete guide
+
+═══════════════════════════════════════════════════════════════════════════════

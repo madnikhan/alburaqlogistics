@@ -1,0 +1,43 @@
+# Copy and paste these into Vercel Dashboard → Settings → Environment Variables
+# Add each variable one by one, or use the bulk import feature
+
+# ============================================
+# REQUIRED - Firebase Configuration
+# ============================================
+NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyDa1YU9LKzv2rVmp6-ONHrFbQwrSpjehmM
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=alburaqlogistics-76788.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=alburaqlogistics-76788
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=alburaqlogistics-76788.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=1038841940420
+NEXT_PUBLIC_FIREBASE_APP_ID=1:1038841940420:web:5386e4368fdb13a7ad3c91
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-J6PBRQELME
+
+# ============================================
+# REQUIRED - App Configuration
+# ============================================
+NEXT_PUBLIC_BASE_URL=https://your-app.vercel.app
+NEXT_PUBLIC_ADMIN_PASSWORD=your_secure_password_here
+
+# ============================================
+# OPTIONAL - Stripe (for real payments)
+# ============================================
+# Uncomment and add your Stripe keys if using Stripe:
+# STRIPE_SECRET_KEY=sk_test_...
+# NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+# STRIPE_WEBHOOK_SECRET=whsec_...
+
+# ============================================
+# OPTIONAL - Distance Calculation APIs
+# ============================================
+# Uncomment if you want to use these APIs:
+# NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_key
+# NEXT_PUBLIC_OPENROUTE_API_KEY=your_openroute_key
+
+# ============================================
+# NOTES:
+# ============================================
+# 1. Replace NEXT_PUBLIC_BASE_URL with your actual Vercel URL after first deploy
+# 2. Set a strong password for NEXT_PUBLIC_ADMIN_PASSWORD
+# 3. Stripe keys are optional - demo payment works without them
+# 4. Distance APIs are optional - system has fallback methods
+

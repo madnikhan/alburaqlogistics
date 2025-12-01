@@ -1,0 +1,23 @@
+// PM2 ecosystem file for production deployment
+// Run with: pm2 start ecosystem.config.js
+
+module.exports = {
+  apps: [{
+    name: 'alburaq-logistics',
+    script: 'npm',
+    args: 'start',
+    cwd: '/path/to/your/website', // Update this path
+    instances: 1,
+    autorestart: true,
+    watch: false,
+    max_memory_restart: '1G',
+    env: {
+      NODE_ENV: 'production',
+      PORT: 3000
+    },
+    error_file: './logs/err.log',
+    out_file: './logs/out.log',
+    log_date_format: 'YYYY-MM-DD HH:mm:ss Z'
+  }]
+};
+

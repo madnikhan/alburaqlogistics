@@ -1,0 +1,62 @@
+================================================================================
+  FASTHOSTS UPLOAD CHECKLIST
+================================================================================
+
+BEFORE UPLOADING:
+-----------------
+☐ All environment variables ready (Firebase, Stripe, etc.)
+☐ Domain name configured in Fasthosts
+☐ FTP/SSH access credentials ready
+☐ Node.js 18+ available on server (for VPS/Cloud hosting)
+
+FILES TO UPLOAD (Check each):
+------------------------------
+☐ .next/ folder (built application)
+☐ public/ folder (static assets)
+☐ package.json
+☐ package-lock.json
+☐ next.config.ts
+☐ tsconfig.json
+☐ server.js (for Node.js hosting)
+☐ ecosystem.config.js (for PM2)
+☐ .htaccess (for shared hosting)
+☐ .env.example (reference only)
+
+AFTER UPLOADING:
+----------------
+☐ SSH into server
+☐ Navigate to website directory
+☐ Run: npm install --production
+☐ Create .env.local file with your variables
+☐ Test: npm start
+☐ Set up PM2: pm2 start npm --name "alburaq-logistics" -- start
+☐ Configure domain and SSL
+☐ Test website: https://yourdomain.co.uk
+
+TESTING CHECKLIST:
+------------------
+☐ Homepage loads correctly
+☐ Services pages display packages
+☐ Booking form works
+☐ Contact form submits
+☐ Admin dashboard accessible
+☐ Mobile responsive
+☐ Firebase connection working
+☐ Payment flow works (if Stripe configured)
+
+================================================================================
+  QUICK COMMANDS
+================================================================================
+
+On Server:
+----------
+cd /path/to/your/website
+npm install --production
+nano .env.local          # Create and add variables
+npm start                # Test
+pm2 start npm --name "alburaq-logistics" -- start
+pm2 save
+pm2 logs alburaq-logistics
+
+================================================================================
+

@@ -1,0 +1,50 @@
+# Files to exclude when deploying to Fasthosts
+# Use this list when uploading files via FTP/SFTP
+
+# Development files
+.git/
+.gitignore
+*.md
+!README.md
+!DEPLOYMENT.md
+!FASTHOSTS_DEPLOY.md
+
+# Development dependencies
+node_modules/
+.next/cache/
+
+# Environment files (create on server)
+.env.local
+.env.development
+.env.test
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Documentation (optional - can include if needed)
+SETUP.md
+FIREBASE_SETUP.md
+STRIPE_SETUP.md
+DEMO_PAYMENT.md
+DISTANCE_CALCULATION.md
+FREE_DISTANCE_APIS.md
+

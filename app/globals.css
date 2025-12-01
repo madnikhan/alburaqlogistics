@@ -3,20 +3,26 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Brand Colors - Gold and Dark Blue */
+  --brand-gold: #D4AF37;
+  --brand-gold-dark: #B8941E;
+  --brand-gold-light: #E5C866;
+  --brand-blue: #092439;
+  --brand-blue-dark: #051620;
+  --brand-blue-light: #0d3552;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-dark: var(--brand-gold-dark);
+  --color-brand-gold-light: var(--brand-gold-light);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-brand-blue-light: var(--brand-blue-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
