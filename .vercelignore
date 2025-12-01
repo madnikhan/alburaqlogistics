@@ -6,7 +6,5 @@ node_modules
 *.log
 .DS_Store
 deploy/
-*.md
-!README.md
 .git
 .gitignore

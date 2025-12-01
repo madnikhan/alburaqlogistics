@@ -2,11 +2,20 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { updateBookingStatus } from '@/lib/firestore';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2025-11-17.clover',
-});
+// Initialize Stripe only if API key is available
+const getStripe = () => {
+  const secretKey = process.env.STRIPE_SECRET_KEY;
+  if (!secretKey) {
+    return null;
+  }
+  return new Stripe(secretKey, {
+    apiVersion: '2025-11-17.clover',
+  });
+};
 
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
+const getWebhookSecret = () => {
+  return process.env.STRIPE_WEBHOOK_SECRET || '';
+};
 
 export async function POST(request: NextRequest) {
   const body = await request.text();
