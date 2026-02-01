@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Header() {
@@ -10,9 +11,19 @@ export default function Header() {
     <header className="bg-[#092439] shadow-lg sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-xl sm:text-2xl font-bold text-[#D4AF37] hover:text-[#E5C866] transition">
-            Al Buraq Logistics
-          </Link>
+                  <Link href="/" className="flex items-center hover:opacity-90 transition gap-2 sm:gap-3">
+                    <Image
+                      src="/logoburaq.png"
+                      alt="Al Buraq Logistics"
+                      width={240}
+                      height={80}
+                      className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto"
+                      priority
+                    />
+                    <span className="text-white text-base sm:text-xl md:text-2xl lg:text-3xl font-bold">
+                      Al Buraq Logistics
+                    </span>
+                  </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
@@ -27,6 +38,9 @@ export default function Header() {
             </Link>
             <Link href="/services/pallets" className="text-white hover:text-[#D4AF37] transition">
               Pallets
+            </Link>
+            <Link href="/services/parcel-delivery" className="text-white hover:text-[#D4AF37] transition">
+              Parcel Delivery
             </Link>
             <Link href="/contact" className="text-white hover:text-[#D4AF37] transition">
               Contact
@@ -94,6 +108,13 @@ export default function Header() {
                 className="text-white hover:text-[#D4AF37] transition py-2"
               >
                 Pallets
+              </Link>
+              <Link
+                href="/services/parcel-delivery"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-white hover:text-[#D4AF37] transition py-2"
+              >
+                Parcel Delivery
               </Link>
               <Link
                 href="/contact"

@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { submitContactForm } from '@/lib/contact';
+import StructuredData from '@/components/StructuredData';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -58,7 +59,15 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-4xl">
+    <>
+      <StructuredData
+        type="breadcrumb"
+        breadcrumbItems={[
+          { name: 'Home', url: '/' },
+          { name: 'Contact', url: '/contact' },
+        ]}
+      />
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-4xl">
       <div className="text-center mb-8 sm:mb-12">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
           Contact Us
@@ -82,7 +91,8 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">📞 Phone</h3>
-              <p className="text-gray-600">0121 XXX XXXX</p>
+              <p className="text-gray-600"><a href="tel:+447543746155" className="hover:text-[#092439]">+44 7543 746155</a></p>
+              <p className="text-gray-600 mt-1"><a href="https://wa.me/447543746155" target="_blank" rel="noopener noreferrer" className="hover:text-[#092439]">WhatsApp</a></p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">✉️ Email</h3>
@@ -197,6 +207,7 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

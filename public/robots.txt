@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /my-bookings/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://alburaqlogistics.co.uk/sitemap.xml
+

@@ -181,20 +181,25 @@ Enter your password when prompted.
 
 **Wait for upload to complete** (may take 2-5 minutes).
 
-### Option B: Using FTP Client (Alternative)
+### Option B: Using FileZilla (FTP Client - Alternative)
 
+**📖 For detailed FileZilla instructions, see: `FILEZILLA_DEPLOY.md`**
+
+Quick steps:
 1. Download FileZilla (free): https://filezilla-project.org/
 2. Install and open FileZilla
 3. Enter these details:
    - **Host:** `ftp.alburaqlogistics.co.uk` or `77.68.64.22`
    - **Username:** Your Fasthosts username
    - **Password:** Your Fasthosts password
-   - **Port:** 21
+   - **Port:** 21 (or 22 for SFTP)
 4. Click "Quickconnect"
-5. Navigate to `public_html` folder on the right side
-6. On the left side, navigate to your `deploy` folder
+5. Navigate to `public_html` folder on the right side (server)
+6. On the left side (local), navigate to your `deploy` folder
 7. Select ALL files in `deploy` folder
 8. Right-click → Upload
+
+**Note:** After uploading, you still need to complete Steps 5-9 below via SSH.
 
 ---
 

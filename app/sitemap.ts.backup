@@ -1,0 +1,36 @@
+import { MetadataRoute } from 'next';
+import { services } from '@/lib/services';
+import { siteConfig } from '@/lib/seo';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = siteConfig.url;
+
+  // Static routes
+  const routes = [
+    '',
+    '/about',
+    '/services',
+    '/book',
+    '/contact',
+    '/faq',
+    '/privacy',
+    '/terms',
+    '/my-bookings',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === '' ? 'daily' as const : 'weekly' as const,
+    priority: route === '' ? 1 : 0.8,
+  }));
+
+  // Dynamic service routes
+  const serviceRoutes = services.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
+  return [...routes, ...serviceRoutes];
+}
+

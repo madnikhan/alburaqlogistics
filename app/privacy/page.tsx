@@ -107,7 +107,7 @@ export default function PrivacyPage() {
           </p>
           <div className="mt-4 text-base sm:text-lg text-gray-700">
             <p>Email: info@alburaqlogistics.co.uk</p>
-            <p>Phone: 0121 XXX XXXX</p>
+            <p>Phone / WhatsApp: +44 7543 746155</p>
             <p>Address: Birmingham, West Midlands, United Kingdom</p>
           </div>
         </section>

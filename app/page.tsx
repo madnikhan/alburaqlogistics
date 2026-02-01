@@ -1,34 +1,51 @@
 import Link from 'next/link';
 import { services } from '@/lib/services';
+import ImageCarousel from '@/components/ImageCarousel';
+import HeroCarousel from '@/components/HeroCarousel';
+import StructuredData from '@/components/StructuredData';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: 'Removal Services Birmingham | House & Office Moving',
+  description: 'Professional removal and logistics services in Birmingham, UK. House moving, office relocation, removals, and pallet services across the West Midlands. Fully insured, experienced movers.',
+  keywords: [
+    'removal services Birmingham',
+    'house movers Birmingham UK',
+    'office moving Birmingham',
+    'logistics services West Midlands',
+    'pallet delivery Birmingham',
+    'removal company Birmingham',
+    'professional movers Birmingham',
+    'Birmingham removals',
+    'West Midlands logistics',
+    'moving services Birmingham',
+    'removal services near me',
+    'man and van Birmingham',
+    'cheap removals Birmingham',
+    'same day removals Birmingham',
+  ],
+});
 
 export default function Home() {
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-[#092439] text-white py-12 sm:py-16 md:py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#D4AF37] mb-4 sm:mb-6">
-            Al Buraq Logistics
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            Professional removal and logistics services across Birmingham and the West Midlands. 
-            Trusted by families and businesses for reliable, efficient moving solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-            <Link
-              href="/book"
-              className="bg-[#D4AF37] text-[#092439] px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-[#E5C866] transition shadow-lg"
-            >
-              Book Now
-            </Link>
-            <Link
-              href="/services"
-              className="bg-transparent text-[#D4AF37] border-2 border-[#D4AF37] px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-[#D4AF37] hover:text-[#092439] transition"
-            >
-              Our Services
-            </Link>
-          </div>
-        </div>
+    <>
+      <StructuredData type="localBusiness" />
+      <div className="bg-white">
+        {/* Hero Section with Slideshow */}
+      <section className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+        <HeroCarousel
+          media={[
+            { type: 'video', src: '/hero-video.mp4' },
+            { type: 'image', src: '/hero/hero-1.jpg' },
+            { type: 'image', src: '/hero/hero-2.jpg' },
+            { type: 'image', src: '/hero/hero-3.jpg' },
+            { type: 'image', src: '/hero/hero-4.jpg' },
+          ]}
+          className="h-full"
+          autoPlay={true}
+          interval={8000}
+        />
       </section>
 
       {/* Services Section */}
@@ -41,16 +58,50 @@ export default function Home() {
             <Link
               key={service.id}
               href={`/services/${service.slug}`}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
             >
-              <div className="w-16 h-16 bg-[#092439] rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">📦</span>
+              <div className="w-full h-48">
+                <ImageCarousel
+                  images={service.images || [service.image]}
+                  alt={service.name}
+                  className="h-full"
+                  autoPlay={true}
+                  interval={4000}
+                />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{service.name}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
-              <span className="text-[#D4AF37] font-semibold">Learn more →</span>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.name}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <span className="text-[#D4AF37] font-semibold">Learn more →</span>
+              </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section className="container mx-auto px-4 py-12 sm:py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+            Serving Birmingham & West Midlands
+          </h2>
+          <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8">
+            Al Buraq Logistics is your trusted local removal company in Birmingham, UK. We provide professional 
+            removal and logistics services throughout the West Midlands region, including:
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 text-sm sm:text-base">
+            <div className="bg-[#092439]/5 rounded-lg p-3 sm:p-4 text-gray-800 font-medium">Birmingham</div>
+            <div className="bg-[#092439]/5 rounded-lg p-3 sm:p-4 text-gray-800 font-medium">Coventry</div>
+            <div className="bg-[#092439]/5 rounded-lg p-3 sm:p-4 text-gray-800 font-medium">Wolverhampton</div>
+            <div className="bg-[#092439]/5 rounded-lg p-3 sm:p-4 text-gray-800 font-medium">Solihull</div>
+            <div className="bg-[#092439]/5 rounded-lg p-3 sm:p-4 text-gray-800 font-medium">Dudley</div>
+            <div className="bg-[#092439]/5 rounded-lg p-3 sm:p-4 text-gray-800 font-medium">Walsall</div>
+            <div className="bg-[#092439]/5 rounded-lg p-3 sm:p-4 text-gray-800 font-medium">Sandwell</div>
+            <div className="bg-[#092439]/5 rounded-lg p-3 sm:p-4 text-gray-800 font-medium">West Bromwich</div>
+          </div>
+          <p className="text-sm sm:text-base text-gray-600 mt-6 sm:mt-8">
+            And surrounding areas. We also provide long-distance moving services throughout the UK.
+          </p>
         </div>
       </section>
 
@@ -102,5 +153,6 @@ export default function Home() {
         </Link>
       </section>
     </div>
+    </>
   );
 }

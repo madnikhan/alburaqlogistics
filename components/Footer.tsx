@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -6,7 +7,15 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
-            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#D4AF37]">Al Buraq Logistics</h3>
+            <Link href="/" className="inline-block mb-3 sm:mb-4">
+              <Image
+                src="/logoburaq.png"
+                alt="Al Buraq Logistics"
+                width={200}
+                height={67}
+                className="h-12 sm:h-14 md:h-16 w-auto"
+              />
+            </Link>
             <p className="text-sm sm:text-base text-gray-300">
               Professional logistics and removal services across Birmingham and the West Midlands.
             </p>
@@ -18,6 +27,7 @@ export default function Footer() {
               <li><Link href="/services/office-moving" className="hover:text-[#D4AF37] transition">Office Moving</Link></li>
               <li><Link href="/services/house-moving" className="hover:text-[#D4AF37] transition">House Moving</Link></li>
               <li><Link href="/services/pallets" className="hover:text-[#D4AF37] transition">Pallets</Link></li>
+              <li><Link href="/services/parcel-delivery" className="hover:text-[#D4AF37] transition">Parcel Delivery</Link></li>
             </ul>
           </div>
           <div>
@@ -41,7 +51,8 @@ export default function Footer() {
             <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base text-[#D4AF37]">Contact</h4>
             <ul className="space-y-1.5 sm:space-y-2 text-sm sm:text-base text-gray-300">
               <li>Birmingham, UK</li>
-              <li>Phone: 0121 XXX XXXX</li>
+              <li><a href="tel:+447543746155" className="hover:text-[#D4AF37] transition">Phone: +44 7543 746155</a></li>
+              <li><a href="https://wa.me/447543746155" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition">WhatsApp: +44 7543 746155</a></li>
               <li>Email: info@alburaqlogistics.co.uk</li>
             </ul>
           </div>

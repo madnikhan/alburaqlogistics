@@ -1,4 +1,4 @@
-export type ServiceType = 'removals' | 'office-moving' | 'house-moving' | 'pallets';
+export type ServiceType = 'removals' | 'office-moving' | 'house-moving' | 'pallets' | 'parcel-delivery';
 
 export interface Package {
   id: string;
@@ -40,6 +40,7 @@ export interface Service {
   slug: ServiceType;
   description: string;
   image: string;
+  images?: string[]; // Array of images for carousel
   features: string[];
 }
 

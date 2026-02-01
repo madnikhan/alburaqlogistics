@@ -1,0 +1,118 @@
+# Step-by-Step Node.js Installation via SSH
+# Copy and paste these commands one by one into your SSH session
+
+# ============================================
+# STEP 1: Install NVM (Node Version Manager)
+# ============================================
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+# ============================================
+# STEP 2: Reload your shell to use NVM
+# ============================================
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# ============================================
+# STEP 3: Verify NVM is installed
+# ============================================
+nvm --version
+
+# ============================================
+# STEP 4: Install Node.js 18 (LTS version)
+# ============================================
+nvm install 18
+
+# ============================================
+# STEP 5: Set Node.js 18 as default
+# ============================================
+nvm use 18
+nvm alias default 18
+
+# ============================================
+# STEP 6: Verify Node.js and npm are installed
+# ============================================
+node --version
+npm --version
+
+# You should see:
+# v18.x.x
+# 9.x.x or 10.x.x
+
+# ============================================
+# STEP 7: Navigate to your website directory
+# ============================================
+cd ~/htdocs
+
+# ============================================
+# STEP 8: Install project dependencies
+# ============================================
+npm install --production
+
+# This will take 2-5 minutes. Wait for it to complete.
+
+# ============================================
+# STEP 9: Create .env.local file
+# ============================================
+cat > .env.local << 'EOF'
+NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyDa1YU9LKzv2rVmp6-ONHrFbQwrSpjehmM
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=alburaqlogistics-76788.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=alburaqlogistics-76788
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=alburaqlogistics-76788.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=1038841940420
+NEXT_PUBLIC_FIREBASE_APP_ID=1:1038841940420:web:5386e4368fdb13a7ad3c91
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-J6PBRQELME
+NEXT_PUBLIC_BASE_URL=https://alburaqlogistics.co.uk
+NEXT_PUBLIC_ADMIN_PASSWORD=your_secure_password_here
+PORT=3000
+HOSTNAME=0.0.0.0
+NODE_ENV=production
+EOF
+
+# ============================================
+# STEP 10: Verify .env.local was created
+# ============================================
+ls -la .env.local
+cat .env.local
+
+# ============================================
+# STEP 11: Install PM2 (Process Manager)
+# ============================================
+npm install -g pm2
+
+# ============================================
+# STEP 12: Start your application with PM2
+# ============================================
+pm2 start npm --name "alburaq-logistics" -- start
+
+# ============================================
+# STEP 13: Save PM2 configuration
+# ============================================
+pm2 save
+
+# ============================================
+# STEP 14: Set PM2 to start on server reboot
+# ============================================
+pm2 startup
+
+# This will show a command. Copy and run that command if it appears.
+
+# ============================================
+# STEP 15: Check if app is running
+# ============================================
+pm2 status
+
+# You should see "alburaq-logistics" with status "online"
+
+# ============================================
+# STEP 16: View application logs
+# ============================================
+pm2 logs alburaq-logistics
+
+# Look for: "Ready on http://0.0.0.0:3000" or similar
+# Press Ctrl+C to exit logs view
+
+# ============================================
+# DONE! Your website should now be working.
+# ============================================
+# Visit: https://alburaqlogistics.co.uk
+

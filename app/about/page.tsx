@@ -1,8 +1,31 @@
 import Link from 'next/link';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
+import StructuredData from '@/components/StructuredData';
+
+export const metadata: Metadata = generateSEOMetadata({
+  title: 'About Us - Professional Removal Services in Birmingham, UK',
+  description: 'Learn about Al Buraq Logistics - a trusted removal and logistics company serving Birmingham and the West Midlands. Fully insured, experienced movers, competitive pricing. Serving Birmingham, Coventry, Wolverhampton, Solihull, and surrounding areas.',
+  keywords: [
+    'about removal company Birmingham',
+    'removal services West Midlands',
+    'experienced movers Birmingham',
+    'trusted removal company',
+  ],
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-4xl">
+    <>
+      <StructuredData
+        type="breadcrumb"
+        breadcrumbItems={[
+          { name: 'Home', url: '/' },
+          { name: 'About', url: '/about' },
+        ]}
+      />
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-4xl">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
         About Al Buraq Logistics
       </h1>
@@ -135,6 +158,7 @@ export default function AboutPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }
 
