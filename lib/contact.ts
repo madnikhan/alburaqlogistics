@@ -3,7 +3,7 @@ import {
   addDoc,
   Timestamp
 } from 'firebase/firestore';
-import { db } from './firebase';
+import { getDb } from './firebase';
 
 const CONTACTS_COLLECTION = 'contacts';
 
@@ -22,7 +22,7 @@ export const submitContactForm = async (data: ContactSubmission): Promise<string
       createdAt: Timestamp.now(),
       read: false,
     };
-    const docRef = await addDoc(collection(db, CONTACTS_COLLECTION), contactData);
+    const docRef = await addDoc(collection(getDb(), CONTACTS_COLLECTION), contactData);
     return docRef.id;
   } catch (error) {
     console.error('Error submitting contact form:', error);

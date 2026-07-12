@@ -9,7 +9,7 @@ import {
   where,
   Timestamp
 } from 'firebase/firestore';
-import { db } from './firebase';
+import { getDb } from './firebase';
 import { Booking } from '@/types';
 
 const BOOKINGS_COLLECTION = 'bookings';
@@ -21,7 +21,7 @@ export const createBooking = async (booking: Omit<Booking, 'id' | 'createdAt' | 
       createdAt: Timestamp.now(),
       updatedAt: Timestamp.now()
     };
-    const docRef = await addDoc(collection(db, BOOKINGS_COLLECTION), bookingData);
+    const docRef = await addDoc(collection(getDb(), BOOKINGS_COLLECTION), bookingData);
     return docRef.id;
   } catch (error) {
     console.error('Error creating booking:', error);
@@ -31,7 +31,7 @@ export const createBooking = async (booking: Omit<Booking, 'id' | 'createdAt' | 
 
 export const getBooking = async (bookingId: string): Promise<Booking | null> => {
   try {
-    const docRef = doc(db, BOOKINGS_COLLECTION, bookingId);
+    const docRef = doc(getDb(), BOOKINGS_COLLECTION, bookingId);
     const docSnap = await getDoc(docRef);
     
     if (docSnap.exists()) {
@@ -56,7 +56,7 @@ export const updateBookingStatus = async (
   paymentStatus?: Booking['paymentStatus']
 ): Promise<void> => {
   try {
-    const docRef = doc(db, BOOKINGS_COLLECTION, bookingId);
+    const docRef = doc(getDb(), BOOKINGS_COLLECTION, bookingId);
     const updateData: any = {
       status,
       updatedAt: Timestamp.now()
@@ -75,7 +75,7 @@ export const updateBookingStatus = async (
 
 export const getBookingsByEmail = async (email: string): Promise<Booking[]> => {
   try {
-    const q = query(collection(db, BOOKINGS_COLLECTION), where('email', '==', email));
+    const q = query(collection(getDb(), BOOKINGS_COLLECTION), where('email', '==', email));
     const querySnapshot = await getDocs(q);
     
     return querySnapshot.docs.map(doc => ({
@@ -92,7 +92,7 @@ export const getBookingsByEmail = async (email: string): Promise<Booking[]> => {
 
 export const getAllBookings = async (): Promise<Booking[]> => {
   try {
-    const querySnapshot = await getDocs(collection(db, BOOKINGS_COLLECTION));
+    const querySnapshot = await getDocs(collection(getDb(), BOOKINGS_COLLECTION));
     
     return querySnapshot.docs.map(doc => ({
       id: doc.id,

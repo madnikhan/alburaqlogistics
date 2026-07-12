@@ -1,6 +1,6 @@
-import { initializeApp, getApps } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
+import { getFirestore, Firestore } from 'firebase/firestore';
+import { getAuth, Auth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -11,10 +11,28 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+// Lazy init: only initialize when first used (avoids build-time errors when env vars are not set)
+let app: FirebaseApp | null = null;
 
-export const db = getFirestore(app);
-export const auth = getAuth(app);
-export default app;
+function getFirebaseApp(): FirebaseApp {
+  if (app) return app;
+  if (!firebaseConfig.apiKey) {
+    throw new Error('Firebase is not configured. Add NEXT_PUBLIC_FIREBASE_* env vars in Vercel (or .env.local).');
+  }
+  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+  return app;
+}
 
+let _db: Firestore | null = null;
+export function getDb(): Firestore {
+  if (!_db) _db = getFirestore(getFirebaseApp());
+  return _db;
+}
+
+let _auth: Auth | null = null;
+export function getAuthLazy(): Auth {
+  if (!_auth) _auth = getAuth(getFirebaseApp());
+  return _auth;
+}
+
+export default getFirebaseApp;
