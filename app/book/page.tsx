@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { getPackageById, getPackagesByService } from '@/lib/packages';
 import { createBooking } from '@/lib/firestore';
-import { Package, ServiceType } from '@/types';
+import { Package } from '@/types';
 import { loadStripe } from '@stripe/stripe-js';
 import PriceCalculator from '@/components/PriceCalculator';
 import { calculateDistance, calculatePrice, getPricingBreakdown } from '@/lib/distance-calculator';
@@ -55,12 +55,14 @@ function BookPageContent() {
   const pickupAddress = watch('pickupAddress');
   const deliveryAddress = watch('deliveryAddress');
 
+  const bookableServiceTypes = ['removals', 'office-moving', 'house-moving', 'pallets'] as const;
+
   useEffect(() => {
-    const serviceParam = searchParams.get('service') as ServiceType;
+    const serviceParam = searchParams.get('service');
     const packageParam = searchParams.get('package');
 
-    if (serviceParam) {
-      setValue('serviceType', serviceParam);
+    if (serviceParam && bookableServiceTypes.includes(serviceParam as typeof bookableServiceTypes[number])) {
+      setValue('serviceType', serviceParam as typeof bookableServiceTypes[number]);
     }
     if (packageParam) {
       setValue('packageId', packageParam);
@@ -203,7 +205,7 @@ function BookPageContent() {
           <select
             {...register('serviceType')}
             onChange={(e) => {
-              setValue('serviceType', e.target.value as ServiceType);
+              setValue('serviceType', e.target.value as BookingFormData['serviceType']);
               setSelectedPackage(null);
               setValue('packageId', '');
             }}
