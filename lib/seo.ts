@@ -3,7 +3,7 @@ import { services } from './services';
 
 export const siteConfig = {
   name: 'Al Buraq Logistics',
-  description: 'Professional removal and logistics services in Birmingham, UK. House moving, office relocation, removals, and pallet services across the West Midlands.',
+  description: 'Professional removal and logistics services in Gloucester, UK. House moving, office relocation, removals, and pallet services across Gloucestershire.',
   url: 'https://alburaqlogistics.co.uk',
   logo: '/logoburaq.png',
   ogImage: '/logoburaq.png',
@@ -15,13 +15,14 @@ export const siteConfig = {
   business: {
     name: 'Al Buraq Logistics',
     address: {
-      streetAddress: 'Birmingham',
-      addressLocality: 'Birmingham',
-      addressRegion: 'West Midlands',
-      postalCode: 'B1',
+      streetAddress: '28 Jersey Road',
+      addressLocality: 'Gloucester',
+      addressRegion: 'Gloucestershire',
+      postalCode: 'GL1 4BA',
       addressCountry: 'GB',
     },
-    phone: '+44 7543 746155',
+    phone: '+447543746155',
+    phoneDisplay: '07543 746155',
     email: 'info@alburaqlogistics.co.uk',
     priceRange: '££',
     openingHours: [
@@ -29,15 +30,11 @@ export const siteConfig = {
       'Sa 09:00-16:00',
     ],
     areaServed: [
-      'Birmingham',
-      'Coventry',
-      'Wolverhampton',
-      'Solihull',
-      'Dudley',
-      'Walsall',
-      'Sandwell',
-      'West Bromwich',
-      'West Midlands',
+      'Gloucester',
+      'Cheltenham',
+      'Stroud',
+      'Bristol',
+      'Gloucestershire',
     ],
   },
 };
@@ -56,7 +53,7 @@ export function generateMetadata({
   image?: string;
 }): Metadata {
   // Ensure title is between 20-60 characters for optimal SEO
-  const baseTitle = title || 'Removal Services Birmingham';
+  const baseTitle = title || 'Removal Services Gloucester';
   const fullTitle = baseTitle.length > 50 
     ? baseTitle 
     : `${baseTitle} | ${siteConfig.name}`;
@@ -70,22 +67,22 @@ export function generateMetadata({
   if (fullDescription.length > 220) {
     fullDescription = fullDescription.substring(0, 217) + '...';
   } else if (fullDescription.length < 150) {
-    fullDescription = fullDescription + ' Serving Birmingham, Coventry, Wolverhampton, Solihull, and surrounding areas.';
+    fullDescription = fullDescription + ' Serving Gloucester, Cheltenham, Stroud, Bristol, and surrounding areas.';
   }
   const url = `${siteConfig.url}${path}`;
   const ogImage = image || `${siteConfig.url}${siteConfig.ogImage}`;
 
   const defaultKeywords = [
-    'removal services Birmingham',
-    'house movers Birmingham',
-    'office moving Birmingham',
-    'logistics services West Midlands',
-    'pallet delivery Birmingham',
-    'removal company Birmingham',
-    'professional movers Birmingham',
-    'Birmingham removals',
-    'West Midlands logistics',
-    'moving services Birmingham',
+    'removal services Gloucester',
+    'house movers Gloucester',
+    'office moving Gloucester',
+    'logistics services Gloucestershire',
+    'pallet delivery Gloucester',
+    'removal company Gloucester',
+    'professional movers Gloucester',
+    'Gloucester removals',
+    'Gloucestershire logistics',
+    'moving services Gloucester',
   ];
 
   return {
@@ -160,8 +157,8 @@ export function generateLocalBusinessSchema() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '52.4862',
-      longitude: '-1.8904',
+      latitude: '51.8642',
+      longitude: '-2.2382',
     },
     openingHoursSpecification: siteConfig.business.openingHours.map((hours) => {
       const [days, time] = hours.split(' ');
@@ -214,7 +211,7 @@ export function generateServiceSchema(service: typeof services[0]) {
     },
     areaServed: {
       '@type': 'City',
-      name: 'Birmingham',
+      name: 'Gloucester',
     },
     description: service.description,
     name: `${service.name} - ${siteConfig.name}`,
@@ -250,4 +247,3 @@ export function generateWebSiteSchema() {
     },
   };
 }
-

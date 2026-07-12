@@ -8,21 +8,21 @@ import StructuredData from "@/components/StructuredData";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
 
 const baseMetadata = generateSEOMetadata({
-  title: "Al Buraq Logistics - Professional Removal Services in Birmingham, UK",
-  description: "Professional removal and logistics services in Birmingham, UK. House moving, office relocation, removals, and pallet services across the West Midlands. Fully insured, experienced movers, competitive pricing.",
+  title: "Al Buraq Logistics - Professional Removal Services in Gloucester, UK",
+  description: "Professional removal and logistics services in Gloucester, UK. House moving, office relocation, removals, and pallet services across Gloucestershire. Fully insured, experienced movers, competitive pricing.",
   keywords: [
-    "removal services Birmingham",
-    "house movers Birmingham UK",
-    "office moving Birmingham",
-    "logistics services West Midlands",
-    "pallet delivery Birmingham",
-    "removal company Birmingham",
-    "professional movers Birmingham",
-    "Birmingham removals",
-    "West Midlands logistics",
-    "moving services Birmingham",
+    "removal services Gloucester",
+    "house movers Gloucester UK",
+    "office moving Gloucester",
+    "logistics services Gloucestershire",
+    "pallet delivery Gloucester",
+    "removal company Gloucester",
+    "professional movers Gloucester",
+    "Gloucester removals",
+    "Gloucestershire logistics",
+    "moving services Gloucester",
     "removal services near me",
-    "man and van Birmingham",
+    "man and van Gloucester",
   ],
 });
 

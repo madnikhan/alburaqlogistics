@@ -85,13 +85,15 @@ export default function ContactPage() {
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">📍 Address</h3>
               <p className="text-gray-600">
-                Birmingham, West Midlands<br />
+                28 Jersey Road<br />
+                Gloucester, Gloucestershire<br />
+                GL1 4BA<br />
                 United Kingdom
               </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">📞 Phone</h3>
-              <p className="text-gray-600"><a href="tel:+447543746155" className="hover:text-[#092439]">+44 7543 746155</a></p>
+              <p className="text-gray-600"><a href="tel:+447543746155" className="hover:text-[#092439]">07543 746155</a></p>
               <p className="text-gray-600 mt-1"><a href="https://wa.me/447543746155" target="_blank" rel="noopener noreferrer" className="hover:text-[#092439]">WhatsApp</a></p>
             </div>
             <div>

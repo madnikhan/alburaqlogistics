@@ -118,9 +118,9 @@ export default function HeroCarousel({
           Al Buraq Logistics
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 animate-fade-in">
-          Professional removal and logistics services in Birmingham, UK. 
-          Trusted by families and businesses across the West Midlands for reliable, efficient moving solutions. 
-          Serving Birmingham, Coventry, Wolverhampton, Solihull, and surrounding areas.
+          Professional removal and logistics services in Gloucester, UK. 
+          Trusted by families and businesses across Gloucestershire for reliable, efficient moving solutions. 
+          Serving Gloucester, Cheltenham, Stroud, Bristol, and surrounding areas.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 animate-fade-in">
           <Link

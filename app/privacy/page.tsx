@@ -107,8 +107,8 @@ export default function PrivacyPage() {
           </p>
           <div className="mt-4 text-base sm:text-lg text-gray-700">
             <p>Email: info@alburaqlogistics.co.uk</p>
-            <p>Phone / WhatsApp: +44 7543 746155</p>
-            <p>Address: Birmingham, West Midlands, United Kingdom</p>
+            <p>Phone / WhatsApp: 07543 746155</p>
+            <p>Address: 28 Jersey Road, Gloucester, Gloucestershire, GL1 4BA, United Kingdom</p>
           </div>
         </section>
       </div>

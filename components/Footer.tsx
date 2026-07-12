@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm sm:text-base text-gray-300">
-              Professional logistics and removal services across Birmingham and the West Midlands.
+              Professional logistics and removal services across Gloucester and Gloucestershire.
             </p>
           </div>
           <div>
@@ -50,9 +50,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base text-[#D4AF37]">Contact</h4>
             <ul className="space-y-1.5 sm:space-y-2 text-sm sm:text-base text-gray-300">
-              <li>Birmingham, UK</li>
-              <li><a href="tel:+447543746155" className="hover:text-[#D4AF37] transition">Phone: +44 7543 746155</a></li>
-              <li><a href="https://wa.me/447543746155" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition">WhatsApp: +44 7543 746155</a></li>
+              <li>28 Jersey Road, Gloucester, GL1 4BA</li>
+              <li><a href="tel:+447543746155" className="hover:text-[#D4AF37] transition">Phone: 07543 746155</a></li>
+              <li><a href="https://wa.me/447543746155" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition">WhatsApp: 07543 746155</a></li>
               <li>Email: info@alburaqlogistics.co.uk</li>
             </ul>
           </div>

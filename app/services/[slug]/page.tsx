@@ -25,20 +25,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const serviceKeywords: Record<string, string[]> = {
-    'removals': ['removal services Birmingham', 'house removals', 'professional removals', 'removal company'],
-    'office-moving': ['office moving Birmingham', 'office relocation', 'commercial moving', 'business relocation'],
-    'house-moving': ['house moving Birmingham', 'home removals', 'residential moving', 'house movers'],
-    'pallets': ['pallet services Birmingham', 'pallet delivery', 'pallet collection', 'pallet transport'],
+    'removals': ['removal services Gloucester', 'house removals', 'professional removals', 'removal company'],
+    'office-moving': ['office moving Gloucester', 'office relocation', 'commercial moving', 'business relocation'],
+    'house-moving': ['house moving Gloucester', 'home removals', 'residential moving', 'house movers'],
+    'pallets': ['pallet services Gloucester', 'pallet delivery', 'pallet collection', 'pallet transport'],
     'parcel-delivery': ['parcel delivery Gloucestershire', 'parcel delivery Stroud', 'parcel delivery Cheltenham', 'parcel delivery Bristol'],
   };
 
   return generateSEOMetadata({
-    title: `${service.name} Services Birmingham`,
-    description: `${service.description} Professional ${service.name.toLowerCase()} services in Birmingham and West Midlands. Fully insured, experienced team, competitive pricing.`,
+    title: `${service.name} Services Gloucester`,
+    description: `${service.description} Professional ${service.name.toLowerCase()} services in Gloucester and Gloucestershire. Fully insured, experienced team, competitive pricing.`,
     keywords: [
       ...(serviceKeywords[slug] || []),
-      'Birmingham',
-      'West Midlands',
+      'Gloucester',
+      'Gloucestershire',
       'UK',
     ],
     path: `/services/${slug}`,
@@ -83,7 +83,7 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
           {service.name === 'Removals' ? 'Professional Moving & Removals Services' : 
-           service.name === 'House Moving' ? 'House Moving Services Birmingham' :
+           service.name === 'House Moving' ? 'House Moving Services Gloucester' :
            service.name === 'Office Moving' ? 'Office Moving & Relocation Services' :
            service.name === 'Parcel Delivery' ? 'Parcel Delivery – Gloucestershire, Stroud, Cheltenham & Bristol' :
            service.name}
@@ -135,7 +135,7 @@ export default async function ServicePage({ params }: PageProps) {
               href="tel:+447543746155"
               className="inline-flex items-center text-[#092439] hover:text-[#D4AF37] font-semibold"
             >
-              Phone: +44 7543 746155
+              Phone: 07543 746155
             </a>
             <a
               href="mailto:info@alburaqlogistics.co.uk"

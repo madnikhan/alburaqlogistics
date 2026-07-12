@@ -1,6 +1,6 @@
 import { Package, ServiceType } from '@/types';
 
-// Packages tailored for Birmingham UK market with base prices
+// Packages tailored for Gloucester UK market with base prices
 // Final price = base price + (distance × £1.20 per mile)
 export const packages: Package[] = [
   // Removals Packages
@@ -8,7 +8,7 @@ export const packages: Package[] = [
     id: 'removal-basic',
     name: 'Basic Removal',
     serviceType: 'removals',
-    description: 'Perfect for small moves within Birmingham',
+    description: 'Perfect for small moves within Gloucester',
     price: 450, // Base price
     features: [
       '1-2 bedroom removal',
@@ -123,7 +123,7 @@ export const packages: Package[] = [
     name: 'Studio/1 Bed Move',
     serviceType: 'house-moving',
     description: 'Perfect for studio or 1 bedroom properties',
-    price: 450, // Base price - matches Birmingham market (£450-£600)
+    price: 450, // Base price - matches Gloucester market (£450-£600)
     features: [
       'Studio/1 bedroom',
       '2 movers',
@@ -140,7 +140,7 @@ export const packages: Package[] = [
     name: '2 Bedroom Move',
     serviceType: 'house-moving',
     description: 'Ideal for 2 bedroom homes',
-    price: 600, // Base price - matches Birmingham market (£600-£900)
+    price: 600, // Base price - matches Gloucester market (£600-£900)
     features: [
       '2 bedroom property',
       '3 movers',
@@ -158,7 +158,7 @@ export const packages: Package[] = [
     name: '3 Bedroom Move',
     serviceType: 'house-moving',
     description: 'Complete service for 3 bedroom homes',
-    price: 900, // Base price - matches Birmingham market (£900-£1,500)
+    price: 900, // Base price - matches Gloucester market (£900-£1,500)
     features: [
       '3 bedroom property',
       '4 movers',
@@ -176,7 +176,7 @@ export const packages: Package[] = [
     name: '4+ Bedroom Move',
     serviceType: 'house-moving',
     description: 'Premium service for large family homes',
-    price: 1200, // Base price - matches Birmingham market (£1,200-£2,000+)
+    price: 1200, // Base price - matches Gloucester market (£1,200-£2,000+)
     features: [
       '4+ bedroom property',
       '5+ movers',
@@ -196,7 +196,7 @@ export const packages: Package[] = [
     id: 'pallet-single',
     name: 'Single Pallet',
     serviceType: 'pallets',
-    description: 'Single pallet delivery within Birmingham',
+    description: 'Single pallet delivery within Gloucester',
     price: 85, // Base price
     features: [
       '1 standard pallet',

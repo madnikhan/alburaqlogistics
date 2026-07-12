@@ -4,12 +4,12 @@ import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'About Us - Professional Removal Services in Birmingham, UK',
-  description: 'Learn about Al Buraq Logistics - a trusted removal and logistics company serving Birmingham and the West Midlands. Fully insured, experienced movers, competitive pricing. Serving Birmingham, Coventry, Wolverhampton, Solihull, and surrounding areas.',
+  title: 'About Us - Professional Removal Services in Gloucester, UK',
+  description: 'Learn about Al Buraq Logistics - a trusted removal and logistics company serving Gloucester and Gloucestershire. Fully insured, experienced movers, competitive pricing. Serving Gloucester, Cheltenham, Stroud, Bristol, and surrounding areas.',
   keywords: [
-    'about removal company Birmingham',
-    'removal services West Midlands',
-    'experienced movers Birmingham',
+    'about removal company Gloucester',
+    'removal services Gloucestershire',
+    'experienced movers Gloucester',
     'trusted removal company',
   ],
   path: '/about',
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <section className="mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Who We Are</h2>
           <p className="text-base sm:text-lg text-gray-700 mb-4">
-            Al Buraq Logistics is a trusted removal and logistics company serving Birmingham and the wider West Midlands region. 
+            Al Buraq Logistics is a trusted removal and logistics company serving Gloucester and the wider Gloucestershire region. 
             With years of experience in the industry, we specialize in providing professional, reliable, and efficient moving 
             services for homes and businesses.
           </p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             <div className="bg-[#092439]/10 rounded-lg p-6 border border-[#D4AF37]/30">
               <h3 className="text-xl font-bold text-gray-900 mb-2">🚚 Pallet Services</h3>
               <p className="text-gray-700">
-                Efficient pallet collection and delivery services throughout Birmingham and beyond.
+                Efficient pallet collection and delivery services throughout Gloucester and beyond.
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
               <span className="text-[#D4AF37] mr-3 text-xl">✓</span>
               <div>
                 <strong className="text-gray-900">Competitive Pricing:</strong> Transparent pricing with packages 
-                tailored for the Birmingham market. Base prices include up to 50 miles.
+                tailored for the Gloucester market. Base prices include up to 50 miles.
               </div>
             </li>
             <li className="flex items-start">
@@ -119,17 +119,13 @@ export default function AboutPage() {
         <section className="mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Our Coverage Area</h2>
           <p className="text-base sm:text-lg text-gray-700 mb-4">
-            We proudly serve Birmingham and the wider West Midlands region, including:
+            We proudly serve Gloucester and the wider Gloucestershire region, including:
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-sm sm:text-base">
-            <div className="text-gray-700">• Birmingham</div>
-            <div className="text-gray-700">• Coventry</div>
-            <div className="text-gray-700">• Wolverhampton</div>
-            <div className="text-gray-700">• Solihull</div>
-            <div className="text-gray-700">• Dudley</div>
-            <div className="text-gray-700">• Walsall</div>
-            <div className="text-gray-700">• Sandwell</div>
-            <div className="text-gray-700">• West Bromwich</div>
+            <div className="text-gray-700">• Gloucester</div>
+            <div className="text-gray-700">• Cheltenham</div>
+            <div className="text-gray-700">• Stroud</div>
+            <div className="text-gray-700">• Bristol</div>
           </div>
           <p className="text-base sm:text-lg text-gray-700 mt-4">
             And surrounding areas. We also provide long-distance moving services throughout the UK.

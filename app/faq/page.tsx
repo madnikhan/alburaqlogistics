@@ -55,7 +55,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'What areas do you cover?',
-    answer: 'We primarily serve Birmingham and the West Midlands region. Base prices include moves up to 50 miles. We can provide long-distance moving services throughout the UK with additional mileage charges.',
+    answer: 'We primarily serve Gloucester and the Gloucestershire region. Base prices include moves up to 50 miles. We can provide long-distance moving services throughout the UK with additional mileage charges.',
   },
 ];
 

@@ -209,9 +209,9 @@ function estimateDistanceFromPostcodes(startAddress: string, endAddress: string)
 
   // If we can't extract postcodes, estimate based on address similarity
   if (!startPostcode || !endPostcode) {
-    if (startAddress.toLowerCase().includes('birmingham') && 
-        endAddress.toLowerCase().includes('birmingham')) {
-      return 8; // Average local Birmingham move
+    if (startAddress.toLowerCase().includes('gloucester') && 
+        endAddress.toLowerCase().includes('gloucester')) {
+      return 8; // Average local Gloucester move
     }
     return 15; // Default estimate
   }
@@ -225,18 +225,18 @@ function estimateDistanceFromPostcodes(startAddress: string, endAddress: string)
     return 3;
   }
 
-  // Different area codes in Birmingham (B postcodes)
-  if (startArea.startsWith('B') && endArea.startsWith('B')) {
-    return 12; // Average Birmingham local move
+  // Different area codes in Gloucestershire (GL postcodes)
+  if (startArea.startsWith('GL') && endArea.startsWith('GL')) {
+    return 12; // Average Gloucestershire local move
   }
 
-  // One is Birmingham (B), other is not = regional (20-50 miles)
-  if ((startArea.startsWith('B') && !endArea.startsWith('B')) ||
-      (!startArea.startsWith('B') && endArea.startsWith('B'))) {
+  // One is Gloucestershire (GL), other is not = regional (20-50 miles)
+  if ((startArea.startsWith('GL') && !endArea.startsWith('GL')) ||
+      (!startArea.startsWith('GL') && endArea.startsWith('GL'))) {
     return 35;
   }
 
-  // Both non-Birmingham = long distance (50+ miles)
+  // Both non-Gloucestershire = long distance (50+ miles)
   return 75;
 }
 

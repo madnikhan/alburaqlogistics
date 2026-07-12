@@ -6,13 +6,13 @@ import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Our Services - Removal & Logistics Services in Birmingham, UK',
-  description: 'Professional removal and logistics services in Birmingham, UK. House moving, office relocation, removals, and pallet services. Serving Birmingham, Coventry, Wolverhampton, Solihull, and the West Midlands.',
+  title: 'Our Services - Removal & Logistics Services in Gloucester, UK',
+  description: 'Professional removal and logistics services in Gloucester, UK. House moving, office relocation, removals, and pallet services. Serving Gloucester, Cheltenham, Stroud, Bristol, and Gloucestershire.',
   keywords: [
-    'removal services Birmingham',
+    'removal services Gloucester',
     'house moving services',
-    'office relocation Birmingham',
-    'pallet services West Midlands',
+    'office relocation Gloucester',
+    'pallet services Gloucestershire',
     'removal company services',
   ],
   path: '/services',
@@ -33,7 +33,7 @@ export default function ServicesPage() {
         Our Services
       </h1>
       <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 text-center max-w-2xl mx-auto px-4">
-        Professional logistics and removal services across Birmingham and the West Midlands
+        Professional logistics and removal services across Gloucester and Gloucestershire
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">

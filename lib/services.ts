@@ -5,7 +5,7 @@ export const services: Service[] = [
     id: 'removals',
     name: 'Removals',
     slug: 'removals',
-    description: 'Professional removal services for homes and businesses across Birmingham and the West Midlands.',
+    description: 'Professional removal services for homes and businesses across Gloucester and Gloucestershire.',
     image: '/services/removals.jpg',
     images: [
       '/services/removals.jpg',
@@ -62,7 +62,7 @@ export const services: Service[] = [
     id: 'pallets',
     name: 'Pallet Services',
     slug: 'pallets',
-    description: 'Efficient pallet collection and delivery services throughout Birmingham.',
+    description: 'Efficient pallet collection and delivery services throughout Gloucester and Gloucestershire.',
     image: '/services/pallets.jpg',
     images: [
       '/services/pallets.jpg',
